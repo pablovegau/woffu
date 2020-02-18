@@ -1,7 +1,7 @@
 import { lighten, darken } from 'polished';
 
 const colors = {
-  primary: '#0060ff',
+  primary: '#2D7FE2',
 };
 
 export const appColors = {
