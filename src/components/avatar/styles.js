@@ -8,7 +8,10 @@ export const ImageWrapper = styled.div`
   width: ${avatarSize};
 
   img {
+    height: 100%;
     width: 100%;
     border-radius: 50%;
+    object-fit: cover;
+    object-position: top center;
   }
 `;
