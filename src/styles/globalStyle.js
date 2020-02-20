@@ -1,5 +1,6 @@
 import { css, createGlobalStyle } from 'styled-components';
-import { appTypography } from '.';
+import { rem } from 'polished';
+import { appTypography, appGrayColors, appBorderRadius, appTextIndents } from '.';
 
 const reset = css`
   html {
@@ -290,5 +291,13 @@ export const GlobalStyle = createGlobalStyle`
   html {
     font-family: 'Lato', sans-serif;
     ${appTypography.text.normal};
+  }
+
+  /* Data picker styles */
+  .react-datepicker__input-container > input{
+    border: 1px solid ${appGrayColors.black20};
+    height: ${rem('30px')};
+    border-radius: ${appBorderRadius.base};
+    text-align: center;
   }
 `;
