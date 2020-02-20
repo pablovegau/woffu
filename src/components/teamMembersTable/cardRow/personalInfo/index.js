@@ -8,7 +8,7 @@ export const PersonalInfo = ({ userInfo }) => {
   const { FirstName, LastName, JobTitleId, DepartmentId, ImageURL } = userInfo;
   return (
     <PersonalInfoWrapper>
-      <Avatar imageUrl={ImageURL} />
+      <Avatar imageUrl={ImageURL} firstName={FirstName} lastName={LastName} />
       <InfoWrapper>
         <Name>{`${FirstName} ${LastName}`}</Name>
         <JobInfo>{`${JobTitleId} | ${DepartmentId}`}</JobInfo>

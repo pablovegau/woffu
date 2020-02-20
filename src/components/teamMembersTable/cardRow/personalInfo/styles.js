@@ -1,10 +1,17 @@
 import styled from 'styled-components';
-import { appMargins, appGrayColors, appTypography } from '../../../../styles';
+import { em } from 'polished';
+import { appMargins, appGrayColors, appTypography, appPaddings } from '../../../../styles';
 
 export const PersonalInfoWrapper = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: ${appMargins.base};
+
+  @media screen and (min-width: ${em('924px')}) {
+    width: 33%;
+    margin-bottom: 0;
+    padding-left: ${appPaddings.kilo};
+  }
 `;
 
 export const InfoWrapper = styled.div`

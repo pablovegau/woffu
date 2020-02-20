@@ -7,6 +7,7 @@ export const HeaderWrapper = styled.div`
   align-items: center;
   height: ${rem('50px')};
   border-bottom: 1px solid ${appGrayColors.black20};
+  background-color: ${appGrayColors.white};
 `;
 
 export const Title = styled.h1`

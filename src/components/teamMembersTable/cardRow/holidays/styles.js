@@ -1,17 +1,28 @@
 import styled from 'styled-components';
-import { rem } from 'polished';
+import { em, rem } from 'polished';
 import { appColors, appGrayColors, appTypography, appMargins } from '../../../../styles';
 
 export const HolidayBarWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: ${appMargins.milli};
+
+  @media screen and (min-width: ${em('924px')}) {
+    align-items: center;
+    justify-content: center;
+    width: 24%;
+    margin-bottom: 0;
+  }
 `;
 
 export const HolidayLabel = styled.span`
   margin-bottom: ${appMargins.micro};
   color: ${appColors.primary.dark};
   ${appTypography.text.small};
+
+  @media screen and (min-width: ${em('924px')}) {
+    display: none;
+  }
 `;
 
 export const HolidaysBar = styled.div`
