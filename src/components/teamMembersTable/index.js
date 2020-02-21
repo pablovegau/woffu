@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { from } from 'rxjs';
+import { filter } from 'rxjs/operators';
+
 import { Header } from './header';
 import { CardRow } from './cardRow';
 import { ColumnNames } from './columnNames';
@@ -13,8 +16,24 @@ export const TeamMembersTable = () => {
   const [endDate, setEndDate] = useState();
 
   useEffect(() => {
-    // In this case here is were I would do the petition to the endpoint to get the info
     setUsers(usersMock);
+
+    if (startDate && endDate) {
+      const filterUsers = [];
+
+      from(usersMock)
+        .pipe(
+          filter(
+            userData =>
+              new Date(userData.EmployeeStartDate) > startDate && new Date(userData.EmployeeStartDate) < endDate,
+          ),
+        )
+        .subscribe(data => {
+          filterUsers.push(data);
+        });
+
+      setUsers(filterUsers);
+    }
   }, [startDate, endDate]);
 
   return (

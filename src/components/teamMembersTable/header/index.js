@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import DatePicker from 'react-datepicker';
 
@@ -6,13 +6,17 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { HeaderWrapper, Title, DataRangeWrapper } from './styles';
 
 export const Header = ({ startDate, setStartDate, endDate, setEndDate }) => {
+  const [localEndDate, setLocalEndDate] = useState();
+  const [localStartDate, setLocalStartDate] = useState();
+
   return (
     <HeaderWrapper>
       <Title>EQUIPO</Title>
       <DataRangeWrapper>
         <DatePicker
           selected={startDate}
-          onChange={date => setStartDate(date)}
+          onChange={date => setLocalStartDate(date)}
+          onCalendarClose={_ => setStartDate(localStartDate)}
           selectsStart
           startDate={startDate}
           endDate={endDate}
@@ -20,7 +24,8 @@ export const Header = ({ startDate, setStartDate, endDate, setEndDate }) => {
         />
         <DatePicker
           selected={endDate}
-          onChange={date => setEndDate(date)}
+          onChange={date => setLocalEndDate(date)}
+          onCalendarClose={_ => setEndDate(localEndDate)}
           selectsEnd
           startDate={startDate}
           endDate={endDate}
