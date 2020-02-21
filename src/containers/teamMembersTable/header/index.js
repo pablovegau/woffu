@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import DatePicker from 'react-datepicker';
 
 import 'react-datepicker/dist/react-datepicker.css';
-import { HeaderWrapper, Title, DataRangeWrapper } from './styles';
+import { HeaderWrapper, Title, DataRangeWrapper, DataPickerLabel } from './styles';
 
 export const Header = ({ startDate, setStartDate, endDate, setEndDate }) => {
   const [localEndDate, setLocalEndDate] = useState();
@@ -13,6 +13,7 @@ export const Header = ({ startDate, setStartDate, endDate, setEndDate }) => {
     <HeaderWrapper>
       <Title>EQUIPO</Title>
       <DataRangeWrapper>
+        <DataPickerLabel>Filtrar por fecha de incorporación</DataPickerLabel>
         <DatePicker
           selected={startDate}
           onChange={date => setLocalStartDate(date)}
