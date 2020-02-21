@@ -67,6 +67,7 @@ npm run prettier
 
 ## Next steps
 
+- Use real endpoint
 - Add unit test with Jest + React-testing-library
 - Add integration test with Jest + React-testing-library
 - Add e2e test with Cypress + Cypress-testing-library
